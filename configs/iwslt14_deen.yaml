@@ -1,0 +1,29 @@
+# fairseq's IWSLT'14 De->En Transformer recipe (examples/translation/README.md):
+#   --arch transformer_iwslt_de_en --share-decoder-input-output-embed
+#   --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0
+#   --lr 5e-4 --lr-scheduler inverse_sqrt --warmup-updates 4000
+#   --dropout 0.3 --weight-decay 0.0001
+#   --criterion label_smoothed_cross_entropy --label-smoothing 0.1 --max-tokens 4096
+# Test: beam 5, BPE removed, tokenised BLEU. Reference point: ~34.4-35 BLEU.
+expname: iwslt14_deen
+data_bin: data-bin/iwslt14.tokenized.de-en
+src_lang: de
+tgt_lang: en
+d_model: 512
+d_ff: 1024
+n_heads: 4
+enc_layers: 6
+dec_layers: 6
+dropout: 0.3
+max_tokens: 4096
+lr: 5.0e-4
+warmup_updates: 4000
+adam_betas: [0.9, 0.98]
+weight_decay: 1.0e-4
+clip_norm: 0.0
+label_smoothing: 0.1
+max_epoch: 60
+beam: 5
+bleu_every: 1
+bleu_start_epoch: 10
+amp: none

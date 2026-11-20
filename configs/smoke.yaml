@@ -1,0 +1,17 @@
+# Tiny model on the generated toy corpus (scripts/make_toy_corpus.py); a few minutes on a CPU.
+expname: smoke
+data_bin: data-bin/toy
+d_model: 128
+d_ff: 256
+n_heads: 4
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+max_tokens: 2048
+lr: 1.0e-3
+warmup_updates: 300
+max_epoch: 6
+bleu_every: 3
+bleu_start_epoch: 3
+log_every: 20
+keep_epoch_ckpts: 3

@@ -1,0 +1,9 @@
+torch>=2.1
+numpy
+pyyaml
+tqdm
+tensorboard
+sacremoses       # Moses tokenizer/detokenizer (Python port)
+subword-nmt      # BPE
+sacrebleu
+pytest
